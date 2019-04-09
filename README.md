@@ -1,1 +1,1 @@
-weather desktop
+<center><b>weather desktop </b></center>  
