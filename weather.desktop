@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Weather Desktop
+GenericName=A Script for start up
+Comment=Not
+Exec= python ~/.config/autostart/py/wt.py
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true
