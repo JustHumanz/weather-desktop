@@ -23,15 +23,18 @@ def main():
         current_humidiy = y["humidity"]
         z = x["weather"]
         weather_description = z[0]["description"]
-        print("Loop")
+        print("Main")
 
         def b():
             time.sleep(1800)
+            print("Stage 1")
             os.system('notify-send '+city_name+' ' +str(current_temperature)+'" celcius" -i ~/Pictures/Cuaca/Icon/thermometer.png')
 
         b()
         def c():
-            time.sleep(1200)
+            time.sleep(2100)
+            print("Stage 2")
+            print(weather_description)
             if (weather_description == "few clouds"):
                 os.system('notify-send "Sedikit Awan" "tuturu" -i ~/Pictures/Cuaca/Icon/cloudy.png')
 
@@ -62,7 +65,8 @@ def main():
         c()
 
         def d():
-            time.sleep(600)
+            time.sleep(2400)
+            print("Stage 3")
             if (weather_description == "few clouds" or weather_description == "broken clouds" or weather_description == "shower rain" or weather_description == "rain" or weather_description == "shower rain" or weather_description == "thunderstorm" ):
                 path = expanduser("~/Pictures/Cuaca/Hujan")
                 files = os.listdir(path)
@@ -91,9 +95,9 @@ def main():
         d()
     else:
         print(" City Not Found ")
-#main()
+main()
 def t():
-    schedule.every(10).minutes.do(main)
+    schedule.every(1).minutes.do(main)
     #schedule.every(1).minutes.do(c)
     #schedule.every(1).minutes.do(d)
 
